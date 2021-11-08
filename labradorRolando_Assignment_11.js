@@ -74,14 +74,14 @@ $(document).ready(function(){
      function check_retype_password() {
         let password = $("#form_password").val();
         let retype_password = $("#form_retype_password").val();
-        if (password !== retype_password) {
-           $("#retype_password_error_message").text("Passwords Did not Matched");
+        if (retype_password !==password ) {
+           $("#retype_password_error_message").text("Passwords Did not Match");
            $("#retype_password_error_message").show();
            $("#form_retype_password").css("background-color","#F90A0A");
            error_retype_password = true;
         } else {
            $("#retype_password_error_message").hide();
-           $("#form_retype_password").css("background-color","2px solid #34F458");
+           $("#form_retype_password").css("background-color","#34F458");
         }
      }
 
@@ -113,7 +113,8 @@ $(document).ready(function(){
         check_retype_password();
 
         if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
-         $(".message").text("Invalid Email");;
+         $(".message").text("Registration Successful");
+         $(".message").css("background-color","#F90A0A");
            return true;
         } else {
            $(".message").text("Please Fill the form Correctly")
@@ -121,7 +122,5 @@ $(document).ready(function(){
            return false;
         }
     });
-
-
-
 });
+
